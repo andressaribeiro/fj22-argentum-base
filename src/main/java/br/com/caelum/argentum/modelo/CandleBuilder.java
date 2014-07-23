@@ -4,64 +4,86 @@ import java.util.Calendar;
 
 public class CandleBuilder {
 
+	private Candlestick candlestick;
+
 	private double abertura;
 	private double fechamento;
 	private double minimo;
 	private double maximo;
 	private double volume;
 	private Calendar data;
-	
-	private boolean aberturaPreenchido = false;
-	private boolean fechamentoPreenchido = false;
-	private boolean minimoPreenchido = false;
-	private boolean maximoPreenchido = false;
-	private boolean volumePreenchido = false;
 
-	public CandleBuilder comAbertura(double abertura) {
-		this.abertura = abertura;
-		this.aberturaPreenchido = true;
-		return this;
+	public CandleBuilder() {
 	}
 
-	public CandleBuilder comFechamento(double fechamento) {
-		this.fechamento = fechamento;
-		this.fechamentoPreenchido = true;
-		return this;
+	public CandleBuilderAbertura comAbertura(double abertura) {
+		return new CandleBuilderAbertura(abertura);
 	}
 
-	public CandleBuilder comMinimo(double minimo) {
-		this.minimo = minimo;
-		this.minimoPreenchido = true;
-		return this;
-	}
-
-	public CandleBuilder comMaximo(double maximo) {
-		this.maximo = maximo;
-		this.maximoPreenchido = true;
-		return this;
-	}
-
-	public CandleBuilder comVolume(double volume) {
-		this.volume = volume;
-		this.volumePreenchido = true;
-		return this;
-	}
-
-	public CandleBuilder comData(Calendar data) {
-		this.data = data;
-		return this;
-	}
-
-	public Candlestick build() {
-		validaCandle();
-		return new Candlestick(abertura, fechamento, minimo, maximo, volume, data);
-	}
-
-	private void validaCandle() {
-		if (!aberturaPreenchido || !fechamentoPreenchido || !minimoPreenchido || !maximoPreenchido
-				|| !volumePreenchido) {
-			throw new IllegalStateException("Construcao invalida");
+	public class CandleBuilderAbertura {
+		private CandleBuilderAbertura(double a) {
+			abertura = a;
 		}
+
+		public CandleBuilderFechamento comFechamento(double fechamento) {
+			return new CandleBuilderFechamento(fechamento);
+		}
+	}
+
+	public class CandleBuilderFechamento {
+		private CandleBuilderFechamento(double f) {
+			fechamento = f;
+		}
+
+		public CandleBuilderMinimo comMinimo(double minimo) {
+			return new CandleBuilderMinimo(minimo);
+		}
+	}
+
+	public class CandleBuilderMinimo {
+		private CandleBuilderMinimo(double min) {
+			minimo = min;
+		}
+
+		public CandleBuilderMaximo comMaximo(double maximo) {
+			return new CandleBuilderMaximo(maximo);
+		}
+	}
+
+	public class CandleBuilderMaximo {
+		private CandleBuilderMaximo(double max) {
+			maximo = max;
+		}
+
+		public CandleBuilderVolume comVolume(double volume) {
+			return new CandleBuilderVolume(volume);
+		}
+	}
+
+	public class CandleBuilderVolume {
+		private CandleBuilderVolume(double v) {
+			volume = v;
+		}
+
+		public CandleBuilderData comData(Calendar data) {
+			return new CandleBuilderData(data);
+		}
+	}
+
+
+	public class CandleBuilderData {
+		public CandleBuilderData(Calendar d) {
+			data = d;
+
+		}
+
+		public Candlestick build() {
+			candlestick = new Candlestick(abertura, fechamento, minimo, maximo,
+					volume, data);
+			
+			return candlestick;
+		}
+
 	}
 
 }

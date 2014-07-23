@@ -12,7 +12,7 @@ public class Candlestick {
 	private final double volume;
 	private final Calendar data;
 
-	public Candlestick(double abertura, double fechamento, double minimo, double maximo,
+	protected Candlestick(double abertura, double fechamento, double minimo, double maximo,
 			double volume, Calendar data) {
 		if (data == null) {
 			throw new IllegalArgumentException("A Data nao pode ser nula!");
@@ -69,10 +69,17 @@ public class Candlestick {
 
 	@Override
 	public String toString() {
+		StringBuilder sb = new StringBuilder("");
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
-		return "[Abertura " + getAbertura() + ", Fechamento " + getFechamento() + ", Minima "
-				+ getMinimo() + ", Maxima " + getMaximo() + ", Volume " + getVolume() + ", Data "
-				+ formatter.format(getData().getTime()) + "]";
+		sb.append(" Abertura: ").append(abertura);
+		sb.append(" Fechamento: ").append(fechamento);
+		sb.append(" Minima: ").append(minimo);
+		sb.append(" Maxima: ").append(maximo);
+		sb.append(" Volume: ").append(volume);
+		sb.append(" Data: ").append(formatter.format(data.getTime()));
+
+		return sb.toString();
 	}
+
 }

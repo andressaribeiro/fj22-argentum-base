@@ -6,9 +6,10 @@ import org.junit.Test;
 
 public class CandlestickBuilderTest {
 
-	@Test(expected = IllegalStateException.class)
+	@Test
 	public void geracaoDeCandleDeveTerTodosOsDadosNecessarios() {
-		new CandleBuilder().comData(Calendar.getInstance()).build();
+		new CandleBuilder().comAbertura(1).comFechamento(1).comMinimo(1)
+				.comMaximo(1).comVolume(1).comData(Calendar.getInstance());
 	}
 
 }

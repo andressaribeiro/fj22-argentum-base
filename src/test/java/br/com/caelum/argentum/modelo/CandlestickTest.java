@@ -27,4 +27,5 @@ public class CandlestickTest {
 		Candlestick candle = new Candlestick(10, 10, 10, 10, 10, Calendar.getInstance());
 		Assert.assertTrue(candle.isAlta());
 	}
+	
 }

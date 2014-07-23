@@ -6,8 +6,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
 
 public class CandlestickFactoryTest {
