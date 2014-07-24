@@ -9,7 +9,8 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 import br.com.caelum.argentum.modelo.Negociacao;
 
 public class LeitorXML {
-	
+
+	@SuppressWarnings("unchecked")
 	public List<Negociacao> carrega(InputStream inputStream) {
 		XStream stream = new XStream(new DomDriver());
 		stream.alias("negociacao", Negociacao.class);

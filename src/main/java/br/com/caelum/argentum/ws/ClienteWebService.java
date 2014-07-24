@@ -9,7 +9,7 @@ import br.com.caelum.argentum.reader.LeitorXML;
 
 public class ClienteWebService {
 
-//	private static String URL_WEBSERVICE = "http://argentumws.caelum.com.br/negociacoes";
+	private static String URL_WEBSERVICE = "http://argentumws.caelum.com.br/negociacoes";
 
 	public static List<Negociacao> getNegociacoes() {
 

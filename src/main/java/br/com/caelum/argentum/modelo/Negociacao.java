@@ -2,7 +2,7 @@ package br.com.caelum.argentum.modelo;
 
 import java.util.Calendar;
 
-public final class Negociacao {
+public final class Negociacao implements Comparable<Negociacao> {
 
 	private final double preco;
 	private final int quantidade;
@@ -39,6 +39,19 @@ public final class Negociacao {
 				&& this.data.get(Calendar.DAY_OF_YEAR) == outraData
 						.get(Calendar.DAY_OF_YEAR)
 				&& this.data.get(Calendar.YEAR) == outraData.get(Calendar.YEAR);
+	}
+
+	@Override
+	public int compareTo(Negociacao n) {
+		if (n.getData().after(data)) {
+			return -1;
+		}
+		
+		if (n.getData().before(data)) {
+			return 1;
+		}
+		
+		return 0;
 	}
 
 }
