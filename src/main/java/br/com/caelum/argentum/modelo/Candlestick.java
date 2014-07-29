@@ -3,6 +3,11 @@ package br.com.caelum.argentum.modelo;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+/**
+ * 
+ * @author Andressa Albuquerque
+ *
+ */
 public class Candlestick {
 
 	private final double abertura;

@@ -5,6 +5,11 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 
+ * @author Andressa Albuquerque
+ *
+ */
 public class CandlestickFactory {
 
 	public Candlestick constroiCandleParaData(Calendar data,

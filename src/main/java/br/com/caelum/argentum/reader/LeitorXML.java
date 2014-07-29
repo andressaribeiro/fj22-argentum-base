@@ -8,6 +8,11 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 
 import br.com.caelum.argentum.modelo.Negociacao;
 
+/**
+ * 
+ * @author Andressa Albuquerque
+ *
+ */
 public class LeitorXML {
 
 	@SuppressWarnings("unchecked")

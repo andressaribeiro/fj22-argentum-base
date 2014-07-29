@@ -2,6 +2,11 @@ package br.com.caelum.argentum.modelo;
 
 import java.util.Calendar;
 
+/**
+ * 
+ * @author Andressa Albuquerque
+ * 
+ */
 public class CandleBuilder {
 
 	private Candlestick candlestick;
@@ -72,18 +77,27 @@ public class CandleBuilder {
 
 
 	public class CandleBuilderData {
-		public CandleBuilderData(Calendar d) {
+		private CandleBuilderData(Calendar d) {
 			data = d;
 
 		}
-
+		
 		public Candlestick build() {
 			candlestick = new Candlestick(abertura, fechamento, minimo, maximo,
 					volume, data);
-			
-			return candlestick;
+			return new CandleBuilderBuild(candlestick).build();
 		}
 
+	}
+	
+	public class CandleBuilderBuild {
+		public CandleBuilderBuild(Candlestick candle) {
+			candlestick = candle;
+		}
+		
+		public Candlestick build() {
+			return candlestick;
+		}
 	}
 
 }

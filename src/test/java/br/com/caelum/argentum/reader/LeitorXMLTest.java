@@ -10,6 +10,11 @@ import org.junit.Test;
 
 import br.com.caelum.argentum.modelo.Negociacao;
 
+/**
+ * 
+ * @author Andressa Albuquerque
+ *
+ */
 public class LeitorXMLTest {
 
 	@Test

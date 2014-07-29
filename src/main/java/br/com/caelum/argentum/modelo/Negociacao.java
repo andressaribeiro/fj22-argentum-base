@@ -2,6 +2,11 @@ package br.com.caelum.argentum.modelo;
 
 import java.util.Calendar;
 
+/**
+ * 
+ * @author Andressa Albuquerque
+ *
+ */
 public final class Negociacao implements Comparable<Negociacao> {
 
 	private final double preco;

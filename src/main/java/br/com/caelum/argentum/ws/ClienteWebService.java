@@ -7,9 +7,14 @@ import java.util.List;
 import br.com.caelum.argentum.modelo.Negociacao;
 import br.com.caelum.argentum.reader.LeitorXML;
 
+/**
+ * 
+ * @author Andressa Albuquerque
+ *
+ */
 public class ClienteWebService {
 
-	private static String URL_WEBSERVICE = "http://argentumws.caelum.com.br/negociacoes";
+//	private static String URL_WEBSERVICE = "http://argentumws.caelum.com.br/negociacoes";
 
 	public static List<Negociacao> getNegociacoes() {
 
