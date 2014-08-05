@@ -18,9 +18,6 @@ public class CandleBuilder {
 	private double volume;
 	private Calendar data;
 
-	public CandleBuilder() {
-	}
-
 	public CandleBuilderAbertura comAbertura(double abertura) {
 		return new CandleBuilderAbertura(abertura);
 	}

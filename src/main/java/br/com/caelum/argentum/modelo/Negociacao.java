@@ -1,5 +1,6 @@
 package br.com.caelum.argentum.modelo;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -57,6 +58,18 @@ public final class Negociacao implements Comparable<Negociacao> {
 		}
 		
 		return 0;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder("");
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		
+		sb.append(" Preço: ").append(preco);
+		sb.append(" Quantidade: ").append(preco);
+		sb.append(" Data: ").append(formatter.format(data));
+		
+		return sb.toString();
 	}
 
 }
